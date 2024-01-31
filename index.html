@@ -11,33 +11,35 @@
         <div class="calculator">
             <div class="text">Calculadora</div>
             <div class="tela">
-                <div class="numeros">1+2+3/4</div>
+                <div class="numeros"></div>
             </div>
             <div class="botoes">
-                <div class="botao">C</div>
+                <div class="botao" onclick="limparTela()">C</div>
                 <div class="botao"><</div>
-                <div class="botao" onclick="adicionarTela">/</div>
-                <div class="botao" onclick="adicionarTela">*</div>
+                <div class="botao" onclick="adicionarTela(event)">/</div>
+                <div class="botao" onclick="adicionarTela(event)">*</div>
 
-                <div class="botao" onclick="adicionarTela">7</div>
-                <div class="botao" onclick="adicionarTela">8</div>
-                <div class="botao" onclick="adicionarTela">9</div>
-                <div class="botao" onclick="adicionarTela">-</div>
+                <div class="botao" onclick="adicionarTela(event)">7</div>
+                <div class="botao" onclick="adicionarTela(event)">8</div>
+                <div class="botao" onclick="adicionarTela(event)">9</div>
+                <div class="botao" onclick="adicionarTela(event)">-</div>
 
-                <div class="botao" onclick="adicionarTela">4</div>
-                <div class="botao" onclick="adicionarTela">5</div>
-                <div class="botao" onclick="adicionarTela">6</div>
-                <div class="botao" onclick="adicionarTela">+</div>
+                <div class="botao" onclick="adicionarTela(event)">4</div>
+                <div class="botao" onclick="adicionarTela(event)">5</div>
+                <div class="botao" onclick="adicionarTela(event)">6</div>
+                <div class="botao" onclick="adicionarTela(event)">+</div>
 
-                <div class="botao" onclick="adicionarTela">1</div>
-                <div class="botao" onclick="adicionarTela">2</div>
-                <div class="botao" onclick="adicionarTela">3</div>
-                <div class="botao igual">=</div>
+                <div class="botao" onclick="adicionarTela(event)">1</div>
+                <div class="botao" onclick="adicionarTela(event)">2</div>
+                <div class="botao" onclick="adicionarTela(event)">3</div>
+                <div class="botao igual" onclick="Calcular()">=</div>
 
-                <div class="botao zero" onclick="adicionarTela">0</div>
-                <div class="botao" onclick="adicionarTela">.</div>
+                <div class="botao zero" onclick="adicionarTela(event)">0</div>
+                <div class="botao" onclick="adicionarTela(event)">.</div>
             </div>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
