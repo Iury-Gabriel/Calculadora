@@ -3,22 +3,26 @@ let total = '';
 
 function adicionarTela(e) {
     let tecla = e.target.innerHTML;
-    total += tecla;
-    tela.innerHTML = total;
+    const ultimoCaractere = total.slice(-1);
+    const operadores = ['+', '-', '*', '/'];
+
+    if (!operadores.includes(ultimoCaractere) || !operadores.includes(tecla)) {
+        total += tecla;
+        tela.innerHTML = total;
+    } else {
+
+    }
 }
 
 function Calcular() {
-    total = '';
     let resultado = eval(tela.innerHTML);
-    total = resultado;
-    if(resultado == undefined) {
+    if (resultado == undefined) {
         tela.innerHTML = '';
         total = '';
     } else {
         tela.innerHTML = resultado;
+        total = resultado.toString();
     }
-    
-    
 }
 
 function limparTela() {
