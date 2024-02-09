@@ -2,15 +2,17 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-image: linear-gradient(45deg,black, crimson);
+    overflow-x: hidden;
 }
 
 .calculator-area {
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(45deg,black, crimson);
+    flex-direction: column;
 }
 
 .calculator {
@@ -84,3 +86,29 @@ body {
     cursor: pointer;
 }
 
+footer {
+    width: 100%;
+    height: 10vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer div {
+    text-align: center;
+    font-size: 30px;
+    font-family: sans-serif;
+    color: #fff;
+}
+
+footer div a {
+    text-decoration: none;
+    color: #dc143c;
+}
+
+footer div a:hover {
+    opacity: 0.5;
+    cursor: pointer;
+
+}
