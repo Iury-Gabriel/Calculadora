@@ -1,19 +1,32 @@
 let tela = document.querySelector(".numeros");
 let total = '';
+let primeiraTecla = true;
 
 function adicionarTela(e) {
     let tecla = e.target.innerHTML;
     const ultimoCaractere = total.slice(-1);
-    const operadores = ['+', '-', 'x', '÷', '.', '%'];
+    const operadores = ['+', '-', 'x', '÷', '%'];
 
-    if(total.length > 13) {
-        alert('Atingido maximo de numeros na tela, apague os numeros e tente novamente')
+    if (total.length > 13) {
+        alert('Atingido máximo de números na tela, apague os números e tente novamente');
     } else {
-        if (!operadores.includes(ultimoCaractere) || !operadores.includes(tecla)) {
-            total += tecla;
-            tela.innerHTML = total;
+        if (primeiraTecla && (operadores.includes(tecla) || tecla === '.')) {
+            // Não permite operadores ou ponto como a primeira tecla
         } else {
-    
+            if (!operadores.includes(ultimoCaractere) || !operadores.includes(tecla)) {
+                const ultimoNumero = total.split(/[\+\-\x÷]/).pop();
+                if (tecla === '.' && ultimoNumero.includes('.')) {
+                    // não pode botar um ponto após o numero
+                } else {
+                    total += tecla;
+                    tela.innerHTML = total;
+                    if (operadores.includes(tecla)) {
+                        primeiraTecla = true; // Reinicia a restrição após um operador ou ponto
+                    } else {
+                        primeiraTecla = false;
+                    }
+                }
+            }
         }
     }
 }
